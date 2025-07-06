@@ -108,6 +108,32 @@ youtube-rag-qa/
 ├── cache/                     # Stores audio, transcript, chunks, FAISS index
 └── requirements.txt
 ```
+ 
+ ## 🧪 How It Works
+```
+Download Audio: YouTube URL is processed and audio is downloaded using yt-dlp and ffmpeg.
+
+Transcription: Audio is transcribed locally using faster-whisper.
+
+Chunking: Text is broken into ~200-word chunks based on sentence boundaries.
+
+Embedding: Chunks are embedded with GTE-small.
+
+Indexing: FAISS is used to create a fast similarity index.
+
+RAG QA: A question is embedded and the most relevant chunks are retrieved. Then, Mistral 7B (GGUF) answers the question with the provided context.
+
+```
+
+  ## 📸 Screenshots
+
+🎯 Step 1: Insert YouTube Link, Select Temperature, and Preview Video
+
+![image](https://github.com/user-attachments/assets/84c77345-3151-46ea-be13-72fdf6275249)
+
+💬 Step 2: Ask Your Question and Get an AI-Powered Answer
+
+![image](https://github.com/user-attachments/assets/5df98743-1bc7-4aff-918c-d7b8bcb494a1)
 
 ---
 
